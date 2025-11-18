@@ -1,36 +1,94 @@
-**QuarkBIOS is a BIOS that operates in 16-bit real mode and is therefore compatible only with x86 platforms. It is positioned as a young and ambitious project that is just beginning to grow.**
+⭐ QuarkBIOS
 
-# QuarkBIOS
+**QuarkBIOS is a 16-bit real-mode BIOS written entirely in x86 Assembly.** 🚀
+It runs in real mode and is therefore compatible only with x86 platforms. QuarkBIOS is a young and ambitious project, designed for educational purposes to teach low-level programming techniques and demonstrate how a BIOS works internally. This project is perfect for anyone who wants to dive into computer architecture, assembly programming, and system internals. 💻✨
 
-QuarkBIOS is a 16-bit real-mode BIOS written in x86 assembly. This project is designed for educational purposes and to demonstrate low-level programming techniques.
+📁 Project Structure
 
-## Project Structure
+_src/_ — Contains the source code for the BIOS
 
-- `src/` - Contains the source code for the BIOS.
-- `build/` - Output directory for compiled binaries.
-- `docs/` - Documentation for the project.
-- `tools/` - Tools and scripts for building and testing.
+_build/_ — Output directory for compiled binaries
 
-## Requirements
+_docs/_ — Documentation, guides, and references
 
-- NASM (Netwide Assembler)
-- QEMU (Quick Emulator) for testing
+_tools/_ — Scripts and utilities for building, testing, and running the BIOS ⚙️
 
-## Build Instructions
+📦 Requirements
 
-1. Install NASM and QEMU.
-2. Run the build script to assemble and link the BIOS.
-3. Use QEMU to test the resulting binary.
+NASM (Netwide Assembler) — to assemble the code
 
-## License
+QEMU (Quick Emulator) — for testing the BIOS in a virtual environment
 
-This project is licensed under the GNU AGPLv3 License.
+Optional: GNU Make for automating the build process 🛠️
 
-## Autors
+🔧 Build Instructions
 
-- Konstantin Kornienko - Programmer, architechtor and director
-- Dmitry Maximenko - Programmer and cool guy
-- And many, many anonymous...
+Install dependencies
 
-- ## End
-- Created by KiG Organization
+`sudo apt install nasm qemu-system-x86`
+
+
+Build the BIOS
+
+`./tools/build.sh`
+
+
+Run in QEMU
+
+`qemu-system-i386 -bios build/quarkbios.bin`
+
+
+You should now see QuarkBIOS running in the emulator! 🎉
+
+🎯 Project Goals / Roadmap
+
+QuarkBIOS is growing, and here’s what we aim to implement:
+
+ Minimal BIOS with interrupt vector table
+
+ INT 10h (Video Services) support 🖥️
+
+ INT 13h (Disk Services) support 💾
+
+ Boot sector loading
+
+ Power-On Self Test (POST) emulation ✅
+
+ Full documentation for all subsystems 📚
+
+ Support for user-defined extensions
+
+This roadmap ensures that the project remains educational, extensible, and fun for contributors.
+
+🤝 Contributing
+
+We welcome contributions of all kinds! Whether it’s fixing bugs, adding new features, or improving documentation, your help is appreciated.
+
+Fork the repository 🍴
+
+Create a new branch 🌿
+
+Make your changes ✍️
+
+Open a pull request 🔄
+
+Celebrate your contribution 😎✨
+
+Every PR helps QuarkBIOS grow and improves the learning experience for everyone.
+
+📜 License
+
+QuarkBIOS is released under the GNU AGPLv3 License. 🛡️
+This ensures that the project remains free and open-source, while also encouraging collaboration.
+
+👥 Authors
+
+_Konstantin Kornienko — Programmer, Architect, and Director_ 🧠
+
+_Dmitry Maximenko — Programmer and Cool Guy_ 😎
+
+**And many anonymous contributors…** 🤫
+
+🧪 Created by _**KiG Organization**_
+
+Thank you for exploring QuarkBIOS! We hope this project inspires you to learn, experiment, and create amazing low-level software. ❤️🚀
