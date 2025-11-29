@@ -1,100 +1,101 @@
-⭐ QuarkBIOS
+# QuarkBIOS
 
-**QuarkBIOS is a 16-bit real-mode BIOS written entirely in x86 Assembly.** 🚀
-It runs in real mode and is therefore compatible only with x86 platforms. QuarkBIOS is a young and ambitious project, designed for educational purposes to teach low-level programming techniques and demonstrate how a BIOS works internally. This project is perfect for anyone who wants to dive into computer architecture, assembly programming, and system internals. 💻✨
+QuarkBIOS is an open-source experimental Legacy BIOS and bootloader project for x86 / x86-64 platforms. The project implements 16-bit real-mode boot code and focuses on classic BIOS functionality: CPU initialization, basic hardware services, interrupt handling, and handoff to a higher-stage loader or kernel.
 
-📁 Project Structure
+This repository is intended for education, research and practical experimentation with low-level system software. The project is not production-ready and is intended to be used in emulators or on designated test hardware only.
 
-_src/_ — Contains the source code for the BIOS
+---
 
-_build/_ — Output directory for compiled binaries
+## Project structure
 
-_docs/_ — Documentation, guides, and references
+- `src/` — BIOS source code (assembly)
+- `build/` — output directory for compiled binaries
+- `docs/` — documentation, design notes, and references
+- `tools/` — scripts and utilities for building, testing and running the BIOS
 
-_tools/_ — Scripts and utilities for building, testing, and running the BIOS ⚙️
+---
 
-📦 Requirements
+## Requirements
 
-NASM (Netwide Assembler) — to assemble the code
+- NASM (Netwide Assembler) — to assemble the BIOS code
+- QEMU (Quick Emulator) — for testing in virtual environment
+- Optional: GNU Make or scripts for build automation
 
-QEMU (Quick Emulator) — for testing the BIOS in a virtual environment
+---
 
-Optional: GNU Make for automating the build process 🛠️
+## Build instructions
 
-🔧 Build Instructions
+1. Install dependencies (example for Debian/Ubuntu):
+```bash
+sudo apt update
+sudo apt install nasm qemu-system-x86
 
-Install dependencies
+2. Build (example):
 
-`sudo apt install nasm qemu-system-x86`
-
-
-Build the BIOS
-
-`./tools/build.sh`
-
-
-Run in QEMU
-
-`qemu-system-i386 -bios build/quarkbios.bin`
+```./tools/build.bat```
 
 
-You should now see QuarkBIOS running in the emulator! 🎉
+or assemble manually:
 
-🎯 Project Goals / Roadmap
+```nasm -f bin src/boot.asm -o build/quarkbios.bin```
 
-QuarkBIOS is growing, and here’s what we aim to implement:
 
- Minimal BIOS with interrupt vector table
+3. Run in QEMU:
 
- INT 10h (Video Services) support 🖥️
+```qemu-system-i386 -bios build/quarkbios.bin```
 
- INT 13h (Disk Services) support 💾
+Project goals and roadmap
 
- Boot sector loading
+QuarkBIOS aims to implement a minimal, well-documented Legacy BIOS with a clear development roadmap. Planned and prioritized items:
 
- Power-On Self Test (POST) emulation ✅
+Minimal BIOS with Interrupt Vector Table and basic initialization
 
- Full documentation for all subsystems 📚
+POST emulation and basic hardware checks
 
- Support for user-defined extensions
+INT 10h (video services) minimal support
 
-This roadmap ensures that the project remains educational, extensible, and fun for contributors.
+INT 13h (disk services) basic access and boot sector loading
 
-🤝 Contributing
+Protected mode transition and higher-stage loader support
 
-We welcome contributions of all kinds! Whether it’s fixing bugs, adding new features, or improving documentation, your help is appreciated.
+ELF kernel loader (Stage 2 / Stage 3)
 
-Fork the repository 🍴
+Serial debug output for development and testing
 
-Create a new branch 🌿
+Comprehensive documentation for subsystems and interfaces
 
-Make your changes ✍️
+Planned items are tracked in the repository and will be updated as development progresses.
 
-Open a pull request 🔄
+Contribution
 
-Celebrate your contribution 😎✨
+Contributions are welcome. Please follow the repository guidelines before submitting changes:
 
-Every PR helps QuarkBIOS grow and improves the learning experience for everyone.
+Fork the repository
 
-📜 License
+Create a feature branch
 
-QuarkBIOS is released under the GNU AGPLv3 License. 🛡️
-This ensures that the project remains free and open-source, while also encouraging collaboration.
+Make changes and add tests where applicable
 
-👥 Authors
+Open a Pull Request
 
-_Konstantin Kornienko — Programmer, Architect, and Director_ 🧠
+Detailed contribution rules and workflow are provided in CONTRIBUTING.md. Contributors must agree that their contributions are licensed under the repository license.
 
-_Dmitry Maximenko — Programmer and Cool Guy_ 😎
+License
 
-**And many anonymous contributors…** 🤫
+This project is released under the GNU GPL v3.0. See the LICENSE file for the full text. All contributions must comply with the terms of AGPL v3.0.
 
-🧪 Created by _**KiG Organization**_
+Authors and maintainers
 
-Thank you for exploring QuarkBIOS! We hope this project inspires you to learn, experiment, and create amazing low-level software. ❤️🚀
+Konstantin Kornienko — Lead developer, architect
 
-🔗 Links and acknowledgements
+Dmitry Maximenko — Developer
 
-Telegram: https://t.me/kig_org
+Project maintained by KiG Organization, 2025.
 
-Special thanks to everyone who contributed to this project!
+Disclaimer
+
+QuarkBIOS is experimental research software. It is not intended for production use. Use on real hardware may be unsafe. Test in virtualized environments or on disposable hardware.
+
+Contact and acknowledgements
+
+For project communication and coordination, use the repository issues and pull requests. Additional contact: Telegram https://t.me/kig_org
