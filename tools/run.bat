@@ -1,20 +1,21 @@
-@echo off
-rem This file is part of the QuarkBIOS project.
-rem
-rem Copyright (C) 2025 KiG Organization
-rem
-rem This program is free software: you can redistribute it and/or modify
-rem it under the terms of the GNU Affero General Public License as published by
-rem the Free Software Foundation, either version 3 of the License, or
-rem (at your option) any later version.
-rem
-rem This program is distributed in the hope that it will be useful,
-rem but WITHOUT ANY WARRANTY; without even the implied warranty of
-rem MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-rem GNU Affero General Public License for more details.
-rem
-rem You should have received a copy of the GNU Affero General Public License
-rem along with this program.  If not, see <https://www.gnu.org/licenses/>.
+REM QuarkBIOS
+REM Copyright (C) 2025 KiG Organizatio
+REM
+REM This file is part of QuarkBIOS.
+REM
+REM QuarkBIOS is free software: you can redistribute it and/or modify
+REM it under the terms of the GNU General Public License as published by
+REM the Free Software Foundation, either version 3 of the License, or
+REM (at your option) any later version.
+REM
+REM QuarkBIOS is distributed in the hope that it will be useful,
+REM but WITHOUT ANY WARRANTY; without even the implied warranty of
+REM MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+REM GNU General Public License for more details.
+REM
+REM You should have received a copy of the GNU General Public License
+REM along with QuarkBIOS.  If not, see <http://www.gnu.org/licenses/>.
+
 
 
 @echo off
@@ -30,4 +31,5 @@ if %errorlevel% neq 0 (
 REM Run the BIOS in QEMU
 
 qemu-system-x86 -drive format=raw,file=..\build\boot.bin -boot a
+
 
