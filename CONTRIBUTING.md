@@ -1,113 +1,74 @@
-# Contributing to QuarkBIOS
+Contributing to QuarkBIOS
+Thank you for your interest in contributing to QuarkBIOS!
+This project is an experimental, educational BIOS and bootloader for x86/x86‑64 platforms. Contributions help improve documentation, code quality, and feature development.
 
-Thank you for your interest in contributing to QuarkBIOS! Any contribution is welcome — from documentation to low-level development.
+📋 Contribution Guidelines
+1. Fork and Branch
+Fork the repository to your own GitHub account.
 
----
-
-## 🧩 How You Can Help
-
-You can contribute in the following areas:
-
-- Bootloader development (x86-64, UEFI)
-- Kernel development
-- Assembly programming
-- Low-level C / C++
-- Linker scripts
-- Build system
-- Documentation
-- Testing
-
----
-
-## 🛠 Requirements
-
-Recommended environment:
-
-- Linux or Windows + WSL
-- GCC or Clang
-- NASM
-- Make or CMake
-- QEMU
-
----
-
-## 🔁 Contribution Workflow
-
-1. Fork the repository
-2. Create a new branch:
-```bash
+Create a new branch for your changes:
+```
+bash
 git checkout -b feature/my-feature
+```
+2. Code Style
+Use NASM syntax for assembly code.
 
-3. Make your changes
+Keep comments clear and concise.
 
-4. Commit your changes:
+English comments are preferred for clarity and sharing.
 
-```git commit -m "Add new feature```
+Maintain reproducibility: document build steps and avoid “magic” solutions.
 
+3. Commit Messages
+Write descriptive commit messages:
 
-5. Push to your fork:
+Use the imperative mood (“Add support for INT 13h”).
 
-```git push origin feature/my-feature```
+Reference issues if applicable (Fixes #42).
 
+4. Testing
+Test changes in QEMU or another emulator before submitting.
 
-6. Open a Pull Request
+Ensure no warnings or errors during assembly (nasm -f bin).
 
-✅ Code Rules
+Verify that the BIOS boots and displays correctly without corrupted characters.
 
-Use clear file and function names
+5. Documentation
+Update docs/ if your change affects architecture, design, or usage.
 
-Add comments where necessary
+Add examples or diagrams where helpful.
 
-No unnecessary commits
+Keep README and roadmap consistent with new features.
 
-One Pull Request per task
+6. Pull Requests
+Open a Pull Request against the main branch.
 
-🐛 Bugs & Suggestions
+Provide a clear description of:
 
-All bugs must be submitted via Issues
+What the change does
 
-Feature requests must also go through Issues
+Why it is needed
 
-Check if an issue is already assigned before starting work
+How it was tested
 
-📜 License
+Be ready to discuss and revise based on feedback.
 
-By submitting code to this project, you agree that your contributions will be licensed under AGPL-3.0.
+🛠️ Types of Contributions
+Code: new BIOS features, bug fixes, optimizations.
 
-💬 Communication
+Documentation: tutorials, design notes, diagrams.
 
-If you need help:
+Testing: reporting bugs, reproducing issues, suggesting improvements.
 
-Open an Issue
+Tools: scripts for building, running, or debugging.
 
-Use the Discussions section in the repository
+⚖️ License
+By contributing, you agree that your contributions will be licensed under the same license as the project: GPLv3.
 
-Thank you for supporting QuarkBIOS!
+🤝 Community Standards
+Be respectful and constructive in discussions.
 
----
+Focus on technical clarity and reproducibility.
 
-# ✅ 2️⃣ HOW TO CREATE TASKS (ISSUES) CORRECTLY
-
-### 🔹 Step 1
-Go to your repository → **Issues** tab
-
-### 🔹 Step 2
-Click **New issue**
-
-### 🔹 Step 3
-Use this template for every issue:
-
-```md
-## Description
-Short explanation of what needs to be done.
-
-## Goal
-Why this is needed.
-
-## Expected Result
-What should work when the task is completed.
-
-## Difficulty
-Beginner / Intermediate / Advanced
-
-2025 (C) KiG Organization
+Contributions should align with the project’s educational and research goals.
