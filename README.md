@@ -1,3 +1,6 @@
+![ASM](https://img.shields.io/badge/asm-6E4C13?style=for-the-badge&logo=asm&logoColor=white)
+![C](https://img.shields.io/badge/c-00599C?style=for-the-badge&logo=c&logoColor=white)
+
 # QuarkBIOS
 
 QuarkBIOS is an open-source experimental Legacy BIOS and bootloader project for x86 / x86-64 platforms. The project implements 16-bit real-mode boot code and focuses on classic BIOS functionality: CPU initialization, basic hardware services, interrupt handling, and handoff to a higher-stage loader or kernel.
@@ -8,7 +11,7 @@ This repository is intended for education, research and practical experimentatio
 
 ## Project structure
 
-- `src/` — BIOS source code (assembly)
+- `core/` — BIOS source code (assembly)
 - `build/` — output directory for compiled binaries
 - `docs/` — documentation, design notes, and references
 - `tools/` — scripts and utilities for building, testing and running the BIOS
@@ -18,6 +21,7 @@ This repository is intended for education, research and practical experimentatio
 ## Requirements
 
 - NASM (Netwide Assembler) — to assemble the BIOS code
+- MSYS2 - for build and emulation
 - QEMU (Quick Emulator) — for testing in virtual environment
 - Optional: GNU Make or scripts for build automation
 
@@ -26,23 +30,19 @@ This repository is intended for education, research and practical experimentatio
 ## Build instructions
 
 1. Install dependencies (example for Debian/Ubuntu):
-`bash
+```bash
 sudo apt update
 sudo apt install nasm qemu-system-x86
-
-2. Build (example):
-
-`./tools/build.bat
-
-
-or assemble manually:
-
-`nasm -f bin src/boot.asm -o build/quarkbios.bin
-
-
-3. Run in QEMU:
-
-`qemu-system-i386 -bios build/quarkbios.bin
+```
+2. Build and run (in MSYS2):
+```
+nasm -f bin bootloader.asm -o boot.bin
+nasm -f bin bios_ui.asm -o bios.bin
+dd if=/dev/zero of=disk.img bs=512 count=2880
+dd if=boot.bin of=disk.img conv=notrunc
+dd if=bios.bin of=disk.img bs=512 seek=1 conv=notrunc
+qemu-system-i386 -drive format=raw,file=disk.img
+```
 
 Project goals and roadmap
 
@@ -58,7 +58,7 @@ INT 13h (disk services) basic access and boot sector loading
 
 Protected mode transition and higher-stage loader support
 
-ELF kernel loader (Stage 2 / Stage 3)
+There is also a minimalistic text interface.
 
 Serial debug output for development and testing
 
