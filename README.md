@@ -68,9 +68,7 @@ Planned items are tracked in the repository and will be updated as development p
 
 ## Interface Preview
 
-<p align="center">
-  <img src="C:\Users\PC\Pictures\Screenshots\biosui.png" width="600" alt="QuarkBIOS UI">
-</p>
+![QuarkBIOS UI](docs/photo_5427108027006918464_x.jpg)
 
 ## Contribution
 
