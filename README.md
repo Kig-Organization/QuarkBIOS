@@ -44,7 +44,7 @@ dd if=bios.bin of=disk.img bs=512 seek=1 conv=notrunc
 qemu-system-i386 -drive format=raw,file=disk.img
 ```
 
-Project goals and roadmap
+## Project goals and roadmap
 
 QuarkBIOS aims to implement a minimal, well-documented Legacy BIOS with a clear development roadmap. Planned and prioritized items:
 
@@ -66,7 +66,11 @@ Comprehensive documentation for subsystems and interfaces
 
 Planned items are tracked in the repository and will be updated as development progresses.
 
-Contribution
+## Interface Preview
+
+![QuarkBIOS UI](C:\Users\PC\Pictures\Screenshots\biosui.png)
+
+## Contribution
 
 Contributions are welcome. Please follow the repository guidelines before submitting changes:
 
@@ -80,11 +84,11 @@ Open a Pull Request
 
 Detailed contribution rules and workflow are provided in CONTRIBUTING.md. Contributors must agree that their contributions are licensed under the repository license.
 
-License
+## License
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-Authors and maintainers
+## Authors and maintainers
 
 Konstantin Kornienko — Lead developer, architect
 
@@ -92,10 +96,10 @@ Dmitry Maximenko — Developer
 
 Project maintained by KiG Organization, 2025.
 
-Disclaimer
+## Disclaimer
 
 QuarkBIOS is experimental research software. It is not intended for production use. Use on real hardware may be unsafe. Test in virtualized environments or on disposable hardware.
 
-Contact and acknowledgements
+## Contact and acknowledgements
 
 For project communication and coordination, use the repository issues and pull requests. Additional contact: Telegram https://t.me/kig_org
